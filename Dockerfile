@@ -3,7 +3,7 @@
 
 FROM debian:8.2
 
-MAINTAINER Ivan Krizsan, https://github.com/krizsan
+MAINTAINER Sergio Luceno, https://github.com/sluceno
 
 # Set this environment variable to true to set timezone on container start.
 ENV SET_CONTAINER_TIMEZONE false
