@@ -1,7 +1,7 @@
 # Elastalert Docker image running on Ubuntu 15.04.
 # Build image with: docker build -t ivankrizsan/elastalert:latest .
 
-FROM ubuntu:15.04
+FROM debian:8.2
 
 MAINTAINER Ivan Krizsan, https://github.com/krizsan
 
