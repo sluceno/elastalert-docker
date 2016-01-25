@@ -24,6 +24,8 @@ ENV LOG_DIR /opt/logs
 ENV ELASTALERT_DIRECTORY_NAME elastalert
 # Elastalert home directory full path.
 ENV ELASTALERT_HOME /opt/${ELASTALERT_DIRECTORY_NAME}
+# Elastalert run command options.
+ENV ELASTALERT_OPTIONS --verbose
 # Alias, DNS or IP of Elasticsearch host to be queried by Elastalert. Set in default Elasticsearch configuration file.
 ENV ELASTICSEARCH_HOST elasticsearch_host
 # Port on above Elasticsearch host. Set in default Elasticsearch configuration file.

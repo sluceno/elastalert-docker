@@ -37,4 +37,4 @@ fi
 rm -f garbage_file
 
 echo "Starting Elastalert..."
-# TODO: start elastalert
+python -m elastalert.elastalert ${ELASTALERT_OPTIONS} --config ${ELASTALERT_CONFIG}
