@@ -27,7 +27,7 @@ ENV ELASTALERT_HOME /opt/${ELASTALERT_DIRECTORY_NAME}
 # Elastalert run command options.
 ENV ELASTALERT_OPTIONS --verbose
 # Alias, DNS or IP of Elasticsearch host to be queried by Elastalert. Set in default Elasticsearch configuration file.
-ENV ELASTICSEARCH_HOST elasticsearch_host
+ENV ELASTICSEARCH_HOST elasticsearch
 # Port on above Elasticsearch host. Set in default Elasticsearch configuration file.
 ENV ELASTICSEARCH_PORT 9200
 
