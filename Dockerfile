@@ -1,16 +1,17 @@
 # Elastalert Docker image running on Ubuntu 15.04.
 # Build image with: docker build -t ivankrizsan/elastalert:latest .
-
 FROM debian:8.2
 
 MAINTAINER Sergio Luceno, https://github.com/sluceno
 
+# Defines  which elastalert version to work with.
+ENV ELASTALERT_VERSION 0.0.74
 # Set this environment variable to true to set timezone on container start.
 ENV SET_CONTAINER_TIMEZONE false
 # Default container timezone as found under the directory /usr/share/zoneinfo/.
 ENV CONTAINER_TIMEZONE Europe/Stockholm
 # URL from which to download Elastalert.
-ENV ELASTALERT_URL https://github.com/Yelp/elastalert/archive/master.zip
+ENV ELASTALERT_URL https://github.com/Yelp/elastalert/archive/v${ELASTALERT_VERSION}.zip
 # Directory holding configuration for Elastalert.
 ENV CONFIG_DIR /opt/config
 # Elastalert rules directory.
