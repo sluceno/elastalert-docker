@@ -4,6 +4,20 @@ FROM debian:8.2
 
 MAINTAINER Sergio Luceno, https://github.com/sluceno
 
+# Install software required for Elastalert and NTP for time synchronization.
+RUN apt-get update && apt-get install -y \
+    gcc \
+    ntp \
+    python \
+    python-dev \
+    unzip \
+    wget
+
+# Install pip - required for installation of Elastalert.
+RUN wget https://bootstrap.pypa.io/get-pip.py && \
+    python get-pip.py && \
+    rm get-pip.py
+
 # Defines  which elastalert version to work with.
 ENV ELASTALERT_VERSION 0.0.74
 # Set this environment variable to true to set timezone on container start.
@@ -36,16 +50,8 @@ WORKDIR /opt
 # Copy the script used to launch the Elastalert when a container is started.
 COPY ./start-elastalert.sh /opt/
 
-# Install software required for Elastalert and NTP for time synchronization.
-RUN apt-get update && \
-    apt-get upgrade -y && \
-    apt-get install -y wget python python-dev unzip gcc ntp && \
-# Install pip - required for installation of Elastalert.
-    wget https://bootstrap.pypa.io/get-pip.py && \
-    python get-pip.py && \
-    rm get-pip.py && \
 # Download and unpack Elastalert.
-    wget ${ELASTALERT_URL} && \
+RUN wget ${ELASTALERT_URL} && \
     unzip *.zip && \
     rm *.zip && \
     mv e* ${ELASTALERT_DIRECTORY_NAME}
