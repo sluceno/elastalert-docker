@@ -37,4 +37,4 @@ fi
 rm -f garbage_file
 
 echo "Starting Elastalert..."
-exec supervisord -c ${ELASTALERT_SUPERVISOR_CONF} -n
+python -m elastalert.elastalert ${ELASTALERT_OPTIONS} --config ${ELASTALERT_CONFIG}
